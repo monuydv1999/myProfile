@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Professional portfolio of an Email Marketing and Digital Campaign professional." />
+  <title>Monu Yadav — Email Marketing & Digital Campaigns</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #111a2f;
+      --surface-2: #17233d;
+      --text: #f5f7ff;
+      --muted: #a8b3ca;
+      --line: rgba(255, 255, 255, .12);
+      --accent: #7c8cff;
+      --accent-2: #56e0c0;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 80% 0%, rgba(124, 140, 255, .12), transparent 32%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 16, 32, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b1020;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 9px 11px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 750;
+      font-size: .92rem;
+      cursor: pointer;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #9a7cff);
+      color: white;
+      box-shadow: 0 10px 30px rgba(124, 140, 255, .22);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, .03);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 92px 0 76px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .82rem;
+      background: rgba(255, 255, 255, .025);
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(86, 224, 192, .12);
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5.1rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      margin: 23px 0 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #a8b4ff 5%, #65e8cb 88%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 630px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 29px 0 30px;
+    }
+
+    .quick-facts {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .quick-facts strong {
+      color: var(--text);
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .profile-card {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 22px;
+      background: linear-gradient(150deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .02));
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .profile-card:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 30px;
+      background: linear-gradient(140deg, rgba(124, 140, 255, .35), transparent 42%, rgba(86, 224, 192, .18));
+      z-index: -1;
+      filter: blur(18px);
+    }
+
+    .profile-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .profile-label {
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .avatar {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #7c8cff, #56e0c0);
+      color: #0b1020;
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+
+    .profile-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      margin: 0 0 5px;
+    }
+
+    .profile-subtitle {
+      color: var(--muted);
+      margin: 0;
+      font-size: .92rem;
+    }
+
+    .mini-dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .mini-stat {
+      background: rgba(7, 12, 25, .5);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 16px;
+    }
+
+    .mini-stat .num {
+      font-size: 1.45rem;
+      font-weight: 850;
+      letter-spacing: -.04em;
+    }
+
+    .mini-stat .label {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 3px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      font-size: .78rem;
+      color: #dbe1ff;
+      background: rgba(124, 140, 255, .11);
+      border: 1px solid rgba(124, 140, 255, .22);
+      border-radius: 9px;
+      padding: 6px 9px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .kicker {
+      color: var(--accent-2);
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      letter-spacing: -.055em;
+      line-height: 1.1;
+      margin: 9px 0 0;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .check {
+      flex: 0 0 25px;
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(86, 224, 192, .13);
+      color: var(--accent-2);
+      font-weight: 900;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 140, 255, .55);
+    }
+
+    .skill-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-2);
+      color: var(--accent-2);
+      font-size: 1.2rem;
+      margin-bottom: 17px;
+    }
+
+    h3 {
+      letter-spacing: -.03em;
+      margin: 0 0 9px;
+      font-size: 1.12rem;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 14px;
+    }
+
+    .small-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .small-tags span {
+      color: var(--muted);
+      font-size: .75rem;
+      border: 1px solid var(--line);
+      padding: 4px 7px;
+      border-radius: 7px;
+    }
+
+    .tools-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 11px 14px;
+      color: #e5e9f6;
+      font-size: .9rem;
+    }
+
+    .tool-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline:before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 10px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 38px;
+    }
+
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--accent-2);
+    }
+
+    .timeline-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .83rem;
+      margin-bottom: 9px;
+    }
+
+    .timeline-card p,
+    .timeline-card li {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .timeline-card ul {
+      padding-left: 19px;
+      margin-bottom: 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .project-visual {
+      min-height: 155px;
+      padding: 22px;
+      display: flex;
+      align-items: end;
+      background: radial-gradient(circle at 80% 10%, rgba(86, 224, 192, .24), transparent 30%), linear-gradient(135deg, rgba(124, 140, 255, .25), rgba(124, 140, 255, .03));
+    }
+
+    .project-visual .visual-label {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: #d8defe;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--accent-2);
+      font-size: .87rem;
+      font-weight: 750;
+      margin-top: 6px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+    }
+
+    .process-step {
+      border-top: 1px solid var(--line);
+      padding: 18px 14px 0 0;
+    }
+
+    .step-number {
+      color: var(--accent-2);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      margin-bottom: 15px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 20px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 23px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      background: rgba(255, 255, 255, .025);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+    }
+
+    .contact-link .contact-icon {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-2);
+      border-radius: 11px;
+    }
+
+    .contact-link small {
+      color: var(--muted);
+      display: block;
+    }
+
+    form {
+      display: grid;
+      gap: 13px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    label {
+      font-size: .83rem;
+      color: #d9e0f3;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: #0b1223;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 13px;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124, 140, 255, .12);
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: .78rem;
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .back-top {
+      color: var(--text);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translate(-50%, 20px);
+      opacity: 0;
+      pointer-events: none;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      padding: 12px 18px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      z-index: 100;
+      transition: .25s;
+      max-width: calc(100% - 30px);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .profile-card {
+        max-width: 600px;
+      }
+
+      .skill-grid,
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 25px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        min-height: 67px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 67px;
+        left: 14px;
+        right: 14px;
+        background: #10182b;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 9px;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero {
+        padding: 52px 0 50px;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 13vw, 4rem);
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .skill-grid,
+      .project-grid,
+      .process-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        padding: 17px;
+      }
+
+      .mini-stat {
+        padding: 13px;
+      }
+
+      .panel {
+        padding: 21px;
+      }
+
+      .quick-facts {
+        gap: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Monu Yadav home"><span class="brand-mark">MY</span><span>Monu Yadav<span
+            style="color:var(--accent-2)">.</span></span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Expertise</a><a href="#experience">Experience</a><a
+          href="#projects">Work</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="btn btn-secondary" href="#contact">Let’s connect ↗</a><button
+          class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks"
+          aria-label="Open navigation">☰</button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="pulse"></span> Email Marketing · Campaign Operations · Deliverability</div>
+          <h1>Turning email into <span class="gradient-text">measurable growth.</span></h1>
+          <p class="hero-copy">Hi, I’m <strong>Monu Yadav</strong> — an email marketing executive and digital campaign
+            professional focused on campaign execution, ESP setup, IP warm-up, audience segmentation, automation, and
+            performance analysis.</p>
+          <div class="hero-buttons"><a class="btn btn-primary" href="#projects">Explore my work <span>↗</span></a><a
+              class="btn btn-secondary" href="#contact">Contact me</a> <a href="./Email_Marketing_Executive(2026).pdf"><button class="btn btn-secondary"
+              id="downloadResume" type="button">Resume PDF ↓</button></div></a>
+          <div class="quick-facts">
+            <div><strong>5 years</strong><span>Experience*</span></div>
+            <div><strong>ESP + CRM</strong><span>Platform expertise</span></div>
+            <div><strong>End-to-end</strong><span>Campaign ownership</span></div>
+          </div>
+          
+        </div>
+        <aside class="profile-card reveal" aria-label="Professional snapshot">
+          <div class="profile-top"><span class="profile-label">Professional snapshot</span>
+            <div class="avatar">MY</div>
+          </div>
+          <p class="profile-title">Email Marketing &<br />Digital Campaign Analyst</p>
+          <p class="profile-subtitle">Campaign strategy · Deliverability · Analytics</p>
+          <div class="mini-dashboard">
+            <div class="mini-stat">
+              <div class="num">01</div>
+              <div class="label">Plan & strategy</div>
+            </div>
+            <div class="mini-stat">
+              <div class="num">02</div>
+              <div class="label">Build & launch</div>
+            </div>
+            <div class="mini-stat">
+              <div class="num">03</div>
+              <div class="label">Monitor & optimize</div>
+            </div>
+            <div class="mini-stat">
+              <div class="num">04</div>
+              <div class="label">Report & improve</div>
+            </div>
+          </div>
+          <div class="tag-row"><span class="tag">ESP Warm-up</span><span class="tag">Automation</span><span
+              class="tag">Segmentation</span><span class="tag">Reporting</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">A little about me</div>
+            <h2>Strategy-minded.<br /><span class="gradient-text">Detail-driven.</span></h2>
+          </div>
+          
+        </div>
+        <div class="about-grid">
+          <div class="panel reveal">
+            <h3>My professional summary</h3>
+            <p>I work across the email campaign lifecycle — from planning and platform setup to audience preparation,
+              template coordination, deployment, monitoring, and reporting. I enjoy solving deliverability challenges
+              and improving campaign workflows with structured testing and automation.</p>
+            <p>My goal is to combine technical execution with performance insights so campaigns are reliable,
+              measurable, and continuously improving.</p>
+            <div class="tag-row"><span class="tag">Ownership</span><span class="tag">Problem solving</span><span
+                class="tag">Cross-team collaboration</span></div>
+          </div>
+          <div class="panel reveal">
+            <h3>What I bring to a team</h3>
+            <div class="highlight-list">
+              <div class="highlight">
+                <div class="check">✓</div>
+                <div><strong>Campaign ownership</strong><span>Planning, setup, quality checks, deployment, and post-send
+                    analysis.</span></div>
+              </div>
+              <div class="highlight">
+                <div class="check">✓</div>
+                <div><strong>Deliverability foundations</strong><span>IP/domain warm-up, sender reputation awareness,
+                    and authentication coordination.</span></div>
+              </div>
+              <div class="highlight">
+                <div class="check">✓</div>
+                <div><strong>Testing and optimization</strong><span>Segmentation, workflow improvements, A/B tests, and
+                    performance reviews.</span></div>
+              </div>
+              <div class="highlight">
+                <div class="check">✓</div>
+                <div><strong>Clear reporting</strong><span>Turning campaign results into practical next steps for the
+                    team.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Core capabilities</div>
+            <h2>Skills that support<br /><span class="gradient-text">the full campaign cycle.</span></h2>
+          </div>
+          
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">✉</div>
+            <h3>Email Campaign Management</h3>
+            <p>Campaign planning, setup, QA, scheduling, deployment, and performance tracking.</p>
+            <div class="small-tags"><span>Campaign execution</span><span>HTML email QA</span><span>Reporting</span>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">↗</div>
+            <h3>Deliverability & Warm-up</h3>
+            <p>Structured sender warm-up, monitoring, domain authentication coordination, and issue investigation.</p>
+            <div class="small-tags"><span>IP warm-up</span><span>SPF / DKIM / DMARC</span><span>Reputation</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">◎</div>
+            <h3>Data & Segmentation</h3>
+            <p>Audience selection, data hygiene checks, segment logic, and campaign-level analysis.</p>
+            <div class="small-tags"><span>Audience segments</span><span>Data checks</span><span>Testing</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌘</div>
+            <h3>Automation & Workflows</h3>
+            <p>Building repeatable processes to support consistent campaign operations and testing.</p>
+            <div class="small-tags"><span>Workflow design</span><span>Automation</span><span>QA checklists</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">▥</div>
+            <h3>Analytics & Optimization</h3>
+            <p>Reviewing engagement and delivery metrics, documenting learnings, and proposing next tests.</p>
+            <div class="small-tags"><span>Open / click rates</span><span>Trend analysis</span><span>A/B tests</span>
+            </div>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">✦</div>
+            <h3>Creative & Technical QA</h3>
+            <p>Working with templates and checking links, rendering, mobile responsiveness, and campaign readiness.</p>
+            <div class="small-tags"><span>HTML / CSS</span><span>Link checks</span><span>Responsive QA</span></div>
+          </article>
+        </div>
+        <div style="margin-top:35px" class="reveal">
+          <h3 style="margin-bottom:15px">Platforms & tools</h3>
+          <div class="tools-wrap">
+            <span class="tool"><i class="tool-dot"></i>Mailgun</span><span class="tool"><i
+                class="tool-dot"></i>SendGrid</span><span class="tool"><i class="tool-dot"></i>SendX</span><span
+              class="tool"><i class="tool-dot"></i>ReachMail</span><span class="tool"><i
+                class="tool-dot"></i>SparkPost</span><span class="tool"><i class="tool-dot"></i>Customer.io</span><span
+              class="tool"><i class="tool-dot"></i>eMercury</span><span class="tool"><i
+                class="tool-dot"></i>HubSpot</span><span class="tool"><i class="tool-dot"></i>Salesforce</span><span
+              class="tool"><i class="tool-dot"></i>ExpertSender</span><span class="tool"><i
+                class="tool-dot"></i>OnGage</span><span class="tool"><i class="tool-dot"></i>HTML / CSS</span>
+          </div>
+          <p class="muted" style="font-size:.78rem;margin-top:12px">Only publish platforms that accurately reflect your
+            hands-on experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Career journey</div>
+            <h2>Experience &<br /><span class="gradient-text">responsibilities.</span></h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-meta"><span>Vellko Media Pvt. Ltd. · Current / Recent</span><span>Dates to
+                  confirm</span></div>
+              <h3>Digital Campaign Analyst / Email Marketing Executive</h3>
+              <p>Responsible for campaign execution and optimization across email platforms, supporting deliverability,
+                segmentation, workflow setup, and reporting.</p>
+              <ul>
+                <li>Handled campaign planning, data checks, setup, launch coordination, and performance analysis.</li>
+                <li>Worked on ESP warm-up processes for dedicated/shared IP environments and monitored sending
+                  performance.</li>
+                <li>Used segmentation and automation workflows to improve campaign operations and engagement.</li>
+                <li>Collaborated with team members on offer, data, design, and technical campaign requirements.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-meta"><span>Earlier experience · Add employer</span><span>Dates to add</span></div>
+              <h3>Email Marketing Specialist / Campaign Operations</h3>
+              <p>Placeholder for your previous role, internship, freelance work, or key responsibilities before your
+                current position.</p>
+              <ul>
+                <li>Add the campaigns, ESPs, customer segments, and responsibilities you owned.</li>
+                <li>Add a measurable achievement, such as improved engagement, smoother warm-up, or reduced campaign
+                  errors.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Selected work</div>
+            <h2>Projects that show<br /><span class="gradient-text">how I think.</span></h2>
+          </div>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-visual"><span class="visual-label">01 / Deliverability</span></div>
+            <div class="project-body">
+              <h3>ESP Warm-up Framework</h3>
+              <p>A structured warm-up concept covering sending progression, monitoring, authentication checks, and
+                quality control.</p>
+              <div class="small-tags"><span>IP warm-up</span><span>Monitoring</span></div><a class="project-link"
+                href="#contact">Discuss this project ↗</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual"><span class="visual-label">02 / Automation</span></div>
+            <div class="project-body">
+              <h3>Campaign Workflow Setup</h3>
+              <p>A repeatable campaign workflow concept designed to reduce manual steps and improve consistency across
+                launches.</p>
+              <div class="small-tags"><span>Automation</span><span>QA process</span></div><a class="project-link"
+                href="#contact">Discuss this project ↗</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual"><span class="visual-label">03 / Analytics</span></div>
+            <div class="project-body">
+              <h3>Segmentation & Performance Review</h3>
+              <p>A reporting concept for comparing audience segments, engagement trends, and next-step optimization
+                opportunities.</p>
+              <div class="small-tags"><span>Segmentation</span><span>Analytics</span></div><a class="project-link"
+                href="#contact">Discuss this project ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">My working style</div>
+            <h2>From brief to<br /><span class="gradient-text">better results.</span></h2>
+          </div>
+          
+        </div>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="step-number">STEP 01</div>
+            <h3>Understand</h3>
+            <p>Clarify the goal, audience, offer, data source, and success metrics.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="step-number">STEP 02</div>
+            <h3>Prepare</h3>
+            <p>Check the data, creative, links, setup, segments, and delivery readiness.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="step-number">STEP 03</div>
+            <h3>Launch & monitor</h3>
+            <p>Execute carefully and monitor relevant delivery and engagement signals.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="step-number">STEP 04</div>
+            <h3>Learn & improve</h3>
+            <p>Report outcomes, document insights, and prioritize the next test.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Education & growth</div>
+            <h2>Learning that supports<br /><span class="gradient-text">my work.</span></h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="panel reveal">
+            <div class="skill-icon">⌂</div>
+            <h3>Bachelor’s Degree — Computer Science</h3>
+            <p>Graduation year: 2020</p>
+            <p class="muted">RGPV and Bhopal (M.P.)</p>
+          </div>
+          <div class="panel reveal">
+            <div class="skill-icon">↗</div>
+            <h3>Continuous learning</h3>
+            <p>Growing skills in email deliverability, campaign analytics, automation, responsive email design, and
+              digital marketing operations.</p>
+            <div class="tag-row"><span class="tag">Email technology</span><span class="tag">Analytics</span><span
+                class="tag">HTML / CSS</span><span class="tag">Automation</span>
+              <span class="tag">WorkFlow</span>
+            <span class="tag">IP Warmup</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Let’s talk</div>
+            <h2>Have a role or project<br /><span class="gradient-text">in mind?</span></h2>
+          </div>
+          <p class="section-intro">I’m happy to discuss email marketing, campaign operations, deliverability, and
+            digital campaign opportunities.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="panel reveal">
+            <h3>Contact details</h3>
+           
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:your.email@example.com"><span
+                  class="contact-icon">✉</span><span><small>Email</small><strong>monuydv1999@gmail.com</strong></span></a>
+              <a class="contact-link" href="www.linkedin.com/in/monu-yadav-1a08aa138" target="_blank" rel="noreferrer"><span
+                  class="contact-icon">in</span><span><small>LinkedIn</small><strong>www.linkedin.com/in/monu-yadav-1a08aa138</strong></span></a>
+              <div class="contact-link"><span class="contact-icon">⌖</span><span><small>Location</small><strong>Bhopal (M.P.) India ·
+                    Open to opportunities</strong></span></div>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <h3>Send a message</h3>
+            <p class="muted">This form opens your default email app. It does not send or store messages on a server.</p>
+            <form id="contactForm">
+              <div class="form-row">
+                <div><label for="name">Your name</label><input id="name" name="name" required
+                    placeholder="e.g. Priya Sharma" /></div>
+                <div><label for="email">Your email</label><input id="email" name="email" type="email" required
+                    placeholder="you@company.com" /></div>
+              </div>
+              <div><label for="subject">Subject</label><input id="subject" name="subject" required
+                  placeholder="Job opportunity / project enquiry" /></div>
+              <div><label for="message">Message</label><textarea id="message" name="message" required
+                  placeholder="Tell me a little about the opportunity..."></textarea></div>
+              <button class="btn btn-primary" type="submit">Prepare email ↗</button>
+              <p class="form-note">Before publishing, update the email address in the page code so this form reaches
+                you.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><span>© <span id="year"></span> Monu Yadav. Built with
+        care.</span><span>Professional portfolio · <a class="back-top" href="#home">Back to top ↑</a></span></div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = open ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navAnchors = [...document.querySelectorAll('.nav-links a')];
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !subject || !message) {
+        showToast('Please complete every field.');
+        return;
+      }
+      const recipient = 'your.email@example.com'; // Replace with your professional email.
+      const body = `Hi Monu,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0ARegards,%0D%0A${encodeURIComponent(name)}%0D%0A${encodeURIComponent(email)}`;
+      window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      showToast('Opening your email app…');
+    });
+
+    document.getElementById('downloadResume').addEventListener('click', () => {
+      const resumeText = `MONU YADAV
+Email Marketing & Digital Campaign Professional
+
+PROFESSIONAL SUMMARY
+Email marketing and digital campaign professional with experience in campaign execution, ESP setup, IP warm-up, segmentation, automation, and performance reporting.
+
+CORE SKILLS
+Email campaign management | ESP warm-up | Deliverability foundations | Data segmentation | Automation workflows | Campaign analytics | HTML/CSS email QA
+
+PLATFORMS
+Mailgun, SendGrid, SendX, ReachMail, SparkPost, Customer.io, eMercury, HubSpot, Salesforce, ExpertSender, OnGage
+
+EXPERIENCE
+Digital Campaign Analyst / Email Marketing Executive — Vellko Media Pvt. Ltd.
+Dates and achievements to be confirmed.
+- Campaign planning, setup, launch coordination, and reporting.
+- ESP warm-up and campaign performance monitoring.
+- Audience segmentation and workflow improvement.
+
+EDUCATION
+Bachelor's Degree in Computer Science — 2020
+Institution details to be added.
+
+CONTACT
+your.email@example.com | LinkedIn URL to be added
+
+NOTE: This is a starter resume draft. Confirm all details and replace placeholders before sharing.`;
+      const blob = new Blob([resumeText], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Email_Marketing_Executive(2026).pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast('Downloaded an editable resume draft (.pdf). Replace placeholders before sharing.');
+    });
+  </script>
+</body>
+
+</html>
